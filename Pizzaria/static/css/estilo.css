@@ -1,3 +1,102 @@
-body {
-    background-color: blanchedalmond;
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#header{
+    background-color: black;
+
+}	
+
+.link-cabeçalho{
+    text-decoration: none ;
+    color: #fff;
+    word-spacing: 5px;
+    font-size: 20px;
+    padding-right: 30px;
+    font-weight: bold;
+
+}
+.link-cabeçalho:hover{
+    color: gray;
+    transition: all ease-in-out 3ms;
+}
+html{
+    scroll-behavior: smooth;
+}
+#navegação{
+    text-align: right;
+    padding-right: 5px;
+}
+.rounded{
+    width: 50%;
+    height: 50%;
+}
+#horafun{
+    background-color: gray;
+}
+#horarios{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 10px;
+}
+.hora{
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}
+#rodape{
+    background-color: gray;
+}
+#contato{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+}
+.p1{
+    padding-left: 20px;
+}
+.p1-tel{
+    padding-left: 20px;
+    font-size: 19px;
+}
+.p2{
+    padding-left: 20px;
+}
+.p2-email{
+    padding-left: 20px;
+    font-size: 19px;
+}
+.p3{
+    padding-left: 20px;
+}
+.p3-end{
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size: 19px;
+}
+#ncardapio{
+    font-size: 50px;
+    text-align: center;
+}
+#cardba{
+    background-color: black;
+}
+.figure{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+.figure-caption{
+    color: black; 
+    font-size: 20px; 
+    text-align: center;
+    font-weight: bold;
+}
+.figure-caption1{
+    text-align: center;
 }
