@@ -20,7 +20,7 @@ class Clientes(models.Model):
     telefone = models.CharField(max_length=20)
     email = models.EmailField(null=False, blank=False)
     
-    endereco = models.ForeignKey(Endereco, on_delete=models.PROTECT)
+    endereco = models.OneToOneField(Endereco, on_delete=models.PROTECT)
     
     def __str__(self):
         return f"{self.nome}"
@@ -31,9 +31,20 @@ class Fornecedores(models.Model):
     telefone = models.CharField(max_length=20)
     email = models.EmailField(null=False, blank=False)
     
-    endereco = models.ForeignKey(Endereco, on_delete=models.PROTECT)
+    endereco = models.OneToOneField(Endereco, on_delete=models.PROTECT)
     
     def __str__(self):
         return f"{self.nome}"
+    
+class Produto(models.Model):
+    id = models.AutoField(primary_key=True)
+    nome = models.CharField(max_length=50, null=False, blank=False)
+    descricao = models.CharField(max_length=100, verbose_name="Descricao", null=False, blank=False)
+    preco = models.DecimalField(max_digits=5, decimal_places=2)
+    
+    def __str__(self):
+        return f"{self.nome}"
+    
+
 
     

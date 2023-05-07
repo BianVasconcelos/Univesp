@@ -5,26 +5,33 @@
 <title>Pagina Inicial</title>
 {% endblock %}
 
+{% block destaque %}
+<section style="background-color: black;">
+  <img src="{% static 'img/logo.jpg' %}" alt="Logo" width="45%" height="45%">
+</section>
+{% endblock %}
+
+
 {% block conteudo %}
-<section id='horafun'>
+<section id='horafun' style="background-color: darkgray;">
     <br><br><br><br><br><br>
-    <h2 id='horarios'>HORÁRIOS DE FUNCIONAMENTO</h2>
+    <h2 id='horarios' class="text-center">HORÁRIOS DE FUNCIONAMENTO</h2>
     <br>
-    <p class='hora'><strong>Segunda-Quinta:</strong>19:00 ás 22:00 horas</p>
-    <p class='hora'><strong>Sexta-Sábado:</strong>18:00 ás 23:00 horas </p>
-    <p class='hora'><strong>Domingo:</strong>18:00 ás 22:00 horas </p>
+    <p class='text-center'><strong>Segunda-Quinta:</strong>19:00 ás 22:00 horas</p>
+    <p class='text-center'><strong>Sexta-Sábado:</strong>18:00 ás 23:00 horas </p>
+    <p class='text-center'><strong>Domingo:</strong>18:00 ás 22:00 horas </p>
     <br><br><br><br><br><br>
 </section>
 <br><br><br>
 <section>
-    <h2 id='ncardapio'>CARDÁPIO</h2>
+    <h2 id='ncardapio' class="text-center">CARDÁPIO</h2>
     <br><br>
 </section>
-<section id="cardba">
+<section id="cardba" style="background-color: black;" class="text-center">
     <br><br>
-      <figure class="figure" style="background-color: white;" >
+      <figure class="figure" style="background-color: white;">
       <img src="{% static 'img/p11.jpg' %}" class="figure-img img-fluid rounded" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure." style="width: 350px;">
-      <figcaption class="figure-caption" ><strong>PIZZA DE CALABRESA</strong></figcaption>
+      <figcaption class="figure-caption"><strong>PIZZA DE CALABRESA</strong></figcaption>
       <figcaption class="figure-caption1" > Calabresa, Cebola,  Orégano, Azeitona</figcaption>
       <br>
      <div class="form-check form-check-inline">
@@ -79,6 +86,118 @@
     </div>
     </figure>
 
+    <figure class="figure"style="background-color: white;">
+      <img src="{% static 'img/p4.jpg' %}" class="figure-img img-fluid rounded" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure."style="width: 350px;">
+      <figcaption class="figure-caption"><strong>PIZZA VEGETARIANA</strong></figcaption>
+      <figcaption class="figure-caption1" > Queijo, Tomate, Brócolis, Catupiry</figcaption>
+      <br>
+      <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1"><strong>P</strong> R$28,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2"><strong>M</strong> R$40,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <label class="form-check-label" for="inlineCheckbox3"><strong>G</strong> R$50,00</label>
+    </div>
+    </figure>
+    
+    <figure class="figure"style="background-color: white;">
+      <img src="{% static 'img/p5.jpg' %}" class="figure-img img-fluid rounded" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure."style="width: 350px;">
+      <figcaption class="figure-caption"><strong>PIZZA DE PEPERONI</strong></figcaption>
+      <figcaption class="figure-caption1" > Peperoni, Queijo</figcaption>
+      <br>
+      <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1"><strong>P</strong> R$28,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2"><strong>M</strong> R$40,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <label class="form-check-label" for="inlineCheckbox3"><strong>G</strong> R$50,00</label>
+    </div>
+    </figure>
+    
+    <figure class="figure"style="background-color: white;">
+      <img src="{% static 'img/p6.jpg' %}" class="figure-img img-fluid rounded" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure."style="width: 350px;">
+      <figcaption class="figure-caption"><strong>PIZZA DE RÚCULA</strong></figcaption>
+      <figcaption class="figure-caption1" > Queijo, Tomate seco, Rúcula, Azeitona preta</figcaption>
+      <br>
+     <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1"><strong>P</strong> R$28,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2"><strong>M</strong> R$40,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <label class="form-check-label" for="inlineCheckbox3"><strong>G</strong> R$50,00</label>
+    </div>
+    </figure>
 
-
+    <figure class="figure"style="background-color: white;">
+      <img src="{% static 'img/p7.jpg' %}" class="figure-img img-fluid rounded" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure."style="width: 350px;">
+      <figcaption class="figure-caption"><strong>PIZZA DE FRANGO COM CATUPIRY</strong></figcaption>
+      <figcaption class="figure-caption1" > Frango, Milho, Catupiry</figcaption>
+      <br>
+     <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1"><strong>P</strong> R$28,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2"><strong>M</strong> R$40,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <label class="form-check-label" for="inlineCheckbox3"><strong>G</strong> R$50,00</label>
+    </div>
+    </figure>
+    
+    <figure class="figure"style="background-color: white;">
+      <img src="{% static 'img/p8.jpg' %}" class="figure-img img-fluid rounded" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure."style="width: 350px;">
+      <figcaption class="figure-caption"><strong>PIZZA BRASILEIRA</strong></figcaption>
+      <figcaption class="figure-caption1" > Queijo, Presunto, Ovo, Cebola, Azeitona preta </figcaption>
+      <br>
+      <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1"><strong>P</strong> R$28,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2"><strong>M</strong> R$40,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <label class="form-check-label" for="inlineCheckbox3"><strong>G</strong> R$50,00</label>
+    </div>
+    </figure>
+    
+    <figure class="figure"style="background-color: white;">
+      <img src="{% static 'img/p9.jpg' %}" class="figure-img img-fluid rounded" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure."style="width: 350px;">
+      <figcaption class="figure-caption"><strong>PIZZA DE BRÓCOLIS</strong></figcaption>
+      <figcaption class="figure-caption1" > Queijo, Brócolis, Bacon</figcaption>
+      <br>
+      <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1"><strong>P</strong> R$28,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2"><strong>M</strong> R$40,00</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <label class="form-check-label" for="inlineCheckbox3"><strong>G</strong> R$50,00</label>
+    </div>
+    </figure>
+    
 {% endblock %}
