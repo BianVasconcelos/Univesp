@@ -45,3 +45,40 @@ class Produto(models.Model):
 class Fornecimento(models.Model):
     fornecedor = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    
+class Pedido(models.Model):
+    TIPOS_PAGAMENTO = (
+        ('Dinheiro', 'Dinheiro'),
+        ('Debito', 'Debito'),
+        ('Credito', 'Credito'),        
+    )
+    data_hora = models.DateTimeField()
+    valor_total = models.DecimalField(max_digits=5, decimal_places=2)
+    pessoa = models.ForeignKey("Pessoa", on_delete=models.CASCADE, related_name='pedidos')
+    login = models.ForeignKey("Login", on_delete=models.CASCADE, related_name='pedidos')
+    
+    def __str__(self):
+        return f"{self.valor_total}"
+    
+class Login(models.Model):
+    TIPOS_USUARIO = (
+        ('Adm', 'Administrador'),
+        ('Com', 'Comum'),
+    )
+    usuario = models.CharField(max_length=45)
+    senha = models.CharField(max_length=45)
+    
+    def __str__(self):
+        return f"{self.usuario}"
+
+class ItensPedido(models.Model):
+    item_id = models.IntegerField(max_length=11)
+    tipo_item = models.CharField(max_length=10)
+    quantidade = models.IntegerField(max_length=11)
+    preco_unitario = models.DecimalField(max_digits=5, decimal_places=2)
+    
+    pizza = models.ForeignKey("Pizza", on_delete=models.CASCADE, related_name='ItensPedido')
+    pedido = models.ForeignKey("Pedido", on_delete=models.CASCADE, related_name='ItensPedido')
+    
+    def __str__(self):
+        return f"{self.item_id} {self.tipo_item} - {self.quantidade} {self.preco_unitario}, ({self.pedido}, {self.produto}) "    

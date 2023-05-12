@@ -1,6 +1,6 @@
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-from .models import Pessoa, Pizza, Produto
+from .models import Pessoa, Pizza, Produto, Pedido, Login, ItensPedido
 
 from django.urls import reverse_lazy
 
@@ -45,16 +45,39 @@ class ProdutoCreate(CreateView):
     ]
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('index')
-    
-    def form_valid(self, form):
-        fornecedor_id = self.request.POST.get('fornecedor')
-        fornecedor = Pessoa.objects.get(id=fornecedor_id)
-        produto = form.save(commit=False)
-        produto.save()
-        produto.fornecedores.add(fornecedor)
-        return super().form_valid(form)
-           
-  
+
+class PedidoCreate(CreateView):
+    model = Pedido
+    fields = [
+        'data_hora',
+        'valor_total',
+        'pessoa',
+        'login'        
+    ]
+    template_name = 'cadastros/form.html'
+    success_url = reverse_lazy('index')
+
+class LoginCreate(CreateView):
+    model = Login
+    fields = [
+        'usuario',
+        'senha'
+    ]
+    template_name = 'cadastros/form.html'
+    success_url = reverse_lazy('index')           
+
+class ItensPedidoCreate(CreateView):
+    model = ItensPedido
+    fields = [
+        'item_id',
+        'tipo_item',
+        'quantidade',
+        'preco_unitario',
+        'pedido',
+        'pizza'
+    ]
+    template_name = 'cadastros/form.html'
+    success_url = reverse_lazy('index')  
 ####################### UPDATE ####################### 
 class PessoaUpdate(UpdateView):
    model = Pessoa
@@ -97,14 +120,39 @@ class ProdutoUpdate(UpdateView):
     ]
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('index')
+
+class PedidoUpdate(UpdateView):
+    model = Pedido
+    fields = [
+        'data_hora',
+        'valor_total',
+        'pessoa',
+        'login'        
+    ]
+    template_name = 'cadastros/form.html'
+    success_url = reverse_lazy('index')
     
-    def form_valid(self, form):
-        fornecedor_id = self.request.POST.get('fornecedor')
-        fornecedor = Pessoa.objects.get(id=fornecedor_id)
-        produto = form.save(commit=False)
-        produto.save()
-        produto.fornecedores.add(fornecedor)
-        return super().form_valid(form)   
+class LoginUpdate(UpdateView):
+    model = Login
+    fields = [
+        'usuario',
+        'senha'
+    ]
+    template_name = 'cadastros/form.html'
+    success_url = reverse_lazy('index')
+    
+class ItensPedidoUpdate(UpdateView):
+    model = ItensPedido
+    fields = [
+        'item_id',
+        'tipo_item',
+        'quantidade',
+        'preco_unitario',
+        'pedido',
+        'pizza'
+    ]
+    template_name = 'cadastros/form.html'
+    success_url = reverse_lazy('index')
     
 ####################### DELETE ####################### 
 class PessoaDelete(DeleteView):
@@ -120,4 +168,19 @@ class PizzaDelete(DeleteView):
 class ProdutoDelete(DeleteView):
    model = Produto
    template_name = 'cadastros/form-excluir.html'
-   success_url = reverse_lazy('index')   
+   success_url = reverse_lazy('index')
+   
+class PedidoDelete(DeleteView):
+   model = Pedido
+   template_name = 'cadastros/form-excluir.html'
+   success_url = reverse_lazy('index')
+      
+class LoginDelete(DeleteView):
+   model = Login
+   template_name = 'cadastros/form-excluir.html'
+   success_url = reverse_lazy('index')
+    
+class ItensPedidoDelete(DeleteView):
+    model = ItensPedido
+    template_name = 'cadastros/form-excluir.html'
+    success_url = reverse_lazy('index')
