@@ -1,4 +1,5 @@
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
 
 from .models import Pessoa, Pizza, Produto, Pedido, Login, ItensPedido
 
@@ -21,7 +22,7 @@ class PessoaCreate(CreateView):
         'cep'
     ]
     template_name = 'cadastros/form.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('listar-pessoas')
     
 class PizzaCreate(CreateView):
     model = Pizza
@@ -184,3 +185,29 @@ class ItensPedidoDelete(DeleteView):
     model = ItensPedido
     template_name = 'cadastros/form-excluir.html'
     success_url = reverse_lazy('index')
+    
+####################### LISTAR #######################
+
+class PessoaList(ListView):
+    model = Pessoa
+    template_name = 'cadastros/listas/pessoa.html'
+    
+class PizzaList(ListView):
+    model = Pizza
+    template_name = 'cadastros/listas/pizza.html'
+    
+class ProdutoList(ListView):
+    model = Produto
+    template_name = 'cadastros/listas/produto.html'
+
+class PedidoList(ListView):
+    model = Pedido
+    template_name = 'cadastros/listas/pedido.html'
+    
+class ItensPedidoList(ListView):
+    model = ItensPedido
+    template_name = 'cadastos/listas/itenspedido.html'
+    
+class LoginList(ListView):
+    model = Login
+    template_name = 'cadastros/listas/login.html'

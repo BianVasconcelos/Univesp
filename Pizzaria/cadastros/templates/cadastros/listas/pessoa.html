@@ -1,0 +1,52 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+
+{% block conteudo %}
+<h3>Lista de Campos registrados</h3>
+<hr>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <th>Tipo</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Endreço</th>
+            <th>Numero</th>
+            <th>Cep</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th>Opções</th>
+        </tr>
+        {% for pessoa in object_list %}
+        <tr>
+            <td>{{ pessoa.tipo }}</td>
+            <td>{{ pessoa.nome }}</td>
+            <td>{{ pessoa.telefone }}</td>
+            <td>{{ pessoa.email }}</td>
+            <td>{{ pessoa.endereco }}</td>
+            <td>{{ pessoa.numero }}</td>
+            <td>{{ pessoa.cep }}</td>
+            <td>{{ pessoa.bairro }}</td>
+            <td>{{ pessoa.cidade }}</td>            
+            <td>
+                <a href="{% url 'editar-pessoa' pessoa.pk %}" class="btn btn-warning btn-sm" title="Editar">Editar</i></a>
+                <a href="{% url 'excluir-pessoa' pessoa.pk %}" class="btn btn-danger btn-sm" title="Excluir">Excluir</a>
+            </td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <td colspan="9"><strong><h6>Nenhum campo registrado</h6></strong></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+{% endblock %}
+
+{% block footer%}
+
+{% endblock %}

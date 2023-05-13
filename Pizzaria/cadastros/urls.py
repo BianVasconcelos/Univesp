@@ -7,6 +7,7 @@ from .views import ProdutoCreate, ProdutoUpdate, ProdutoDelete
 from .views import PedidoCreate, PedidoUpdate, PedidoDelete
 from .views import LoginCreate, LoginUpdate, LoginDelete
 from .views import ItensPedidoCreate, ItensPedidoUpdate, ItensPedidoDelete
+from .views import PessoaList, PizzaList, ProdutoList, PedidoList, ItensPedidoList, LoginList
 
 
 urlpatterns = [
@@ -33,5 +34,12 @@ urlpatterns = [
     
     path('cadastrar/itenspedido', ItensPedidoCreate.as_view(), name='cadastrar-itenspedido'),        
     path('editar/itenspedido/<int:pk>/', ItensPedidoUpdate.as_view(), name='editar-itenspedido'),   
-    path('excluir/itenspedido/<int:pk>', ItensPedidoDelete.as_view(), name='excluir-itenspedido'),          
+    path('excluir/itenspedido/<int:pk>', ItensPedidoDelete.as_view(), name='excluir-itenspedido'),
+    
+    path('listar/pessoas/', PessoaList.as_view(), name='listar-pessoas'),
+    path('listar/pedidos/', PedidoList.as_view(), name='listar-pedidos'),
+    path('listar/produtos/', ProdutoList.as_view(), name='listar-produtos'),
+    path('listar/pizzas/', PizzaList.as_view(), name='listar-pizzas'),
+    path('listar/itenspedidos/', ItensPedidoList.as_view(), name='listar-itenspedidos'),
+    path('listar/logins/', LoginList.as_view(), name='listar-logins'),          
 ]
