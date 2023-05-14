@@ -3,6 +3,8 @@ from django.views.generic.list import ListView
 
 from .models import Pessoa, Pizza, Produto, Pedido, Login, ItensPedido
 
+from .forms import PizzaForm
+
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -26,15 +28,13 @@ class PessoaCreate(CreateView):
     
 class PizzaCreate(CreateView):
     model = Pizza
-    fields = [
-       'nome',
-       'valor_p',
-       'valor_m',
-       'valor_g',
-       'descricao'
-    ]
-    template_name = 'cadastros/form.html'
+    form_class = PizzaForm    
+    template_name = 'cadastros/formpizza.html'
     success_url = reverse_lazy('index')
+    
+    def form_valid(self, form):
+        form.instance.autor = self.request.user
+        return super().form_valid(form)
     
 class ProdutoCreate(CreateView):
     model = Produto
@@ -100,15 +100,8 @@ class PessoaUpdate(UpdateView):
    
 class PizzaUpdate(UpdateView):
     model = Pizza
-    fields = [
-       'nome',
-       'valor_p',
-       'valor_m',
-       'valor_g',
-       'descricao',
-       'imagem'
-    ]
-    template_name = 'cadastros/form.html'
+    template_name = 'cadastros/formpizza.html'
+    form_class = PizzaForm
     success_url = reverse_lazy('index')
     
 class ProdutoUpdate(UpdateView):
@@ -198,7 +191,7 @@ class PizzaList(ListView):
     
 class ProdutoList(ListView):
     model = Produto
-    template_name = 'cadastros/listas/produto.html'
+    template_name = 'cadastros/listas/produto.html'    
 
 class PedidoList(ListView):
     model = Pedido
@@ -211,3 +204,8 @@ class ItensPedidoList(ListView):
 class LoginList(ListView):
     model = Login
     template_name = 'cadastros/listas/login.html'
+    
+class HomePageView(ListView):
+    model = Pizza
+    template_name = 'index.html'
+    context_object_name = 'pizzas'

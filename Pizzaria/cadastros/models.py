@@ -44,7 +44,7 @@ class Produto(models.Model):
     
 class Fornecimento(models.Model):
     fornecedor = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
-    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)   
     
 class Pedido(models.Model):
     TIPOS_PAGAMENTO = (
