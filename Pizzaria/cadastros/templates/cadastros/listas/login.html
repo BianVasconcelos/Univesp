@@ -1,0 +1,40 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+
+{% block conteudo %}
+<h3>Lista de Campos registrados</h3>
+<hr>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <th>Tipo de usuário</th>
+            <th>Usuário</th>
+            <th>Senha</th>
+            <th>Opções</th>
+        </tr>
+        {% for login in object_list %}
+        <tr>
+            <td>{{ login.tipo_user }}</td>
+            <td>{{ login.usuario }}</td>
+            <td>{{ login.senha }}</td>                             
+            <td>
+                <a href="{% url 'editar-login' login.pk %}" class="btn btn-warning btn-sm">Editar</i></a>
+                <a href="{% url 'excluir-login' login.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <td colspan="6"><strong><h6>Nenhum campo registrado</h6></strong></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+{% endblock %}
+
+{% block footer%}
+
+{% endblock %}

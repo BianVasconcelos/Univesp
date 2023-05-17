@@ -11,16 +11,39 @@
             <th>Login</th>
             <th>Cliente</th>
             <th>Data e hora</th>
+            <th>Tipo de pagamento</th>
             <th>Valor Total</th>
             <th>Opções</th>
         </tr>
         {% for pedido in object_list %}
         <tr>
             <td>{{ pedido.login }}</td>
-            <td>{{ pedido.pessoa }}</td>
+            <td>{{ pedido.pedido }}</td>
             <td>{{ pedido.data_hora }}</td>
+            <td>{{ pedido.tipo_pagamento }}</td>
             <td>{{ pedido.valor_total }}</td>                       
             <td>
+                <a href="{% url 'listar-itenspedidos' %}" class="btn btn-secondary btn-sm">Pedido</i></a>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Pedido</button>
+                <!--Modal-->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="staticBackdropLabel">Itens do Pedido</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                                      
+                            
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 <a href="{% url 'editar-pedido' pedido.pk %}" class="btn btn-warning btn-sm">Editar</i></a>
                 <a href="{% url 'excluir-pedido' pedido.pk %}" class="btn btn-danger btn-sm">Excluir</a>
             </td>

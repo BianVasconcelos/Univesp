@@ -30,7 +30,7 @@ class PizzaCreate(CreateView):
     model = Pizza
     form_class = PizzaForm    
     template_name = 'cadastros/formpizza.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('listar-pizzas')
     
     def form_valid(self, form):
         form.instance.autor = self.request.user
@@ -45,7 +45,7 @@ class ProdutoCreate(CreateView):
         'fornecedores'
     ]
     template_name = 'cadastros/form.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('listar-produtos')
 
 class PedidoCreate(CreateView):
     model = Pedido
@@ -56,7 +56,7 @@ class PedidoCreate(CreateView):
         'login'        
     ]
     template_name = 'cadastros/form.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('listar-pedidos')
 
 class LoginCreate(CreateView):
     model = Login
@@ -65,7 +65,7 @@ class LoginCreate(CreateView):
         'senha'
     ]
     template_name = 'cadastros/form.html'
-    success_url = reverse_lazy('index')           
+    success_url = reverse_lazy('listar-logins')           
 
 class ItensPedidoCreate(CreateView):
     model = ItensPedido
@@ -78,7 +78,7 @@ class ItensPedidoCreate(CreateView):
         'pizza'
     ]
     template_name = 'cadastros/form.html'
-    success_url = reverse_lazy('index')  
+    success_url = reverse_lazy('listar-itenspedidos')  
 ####################### UPDATE ####################### 
 class PessoaUpdate(UpdateView):
    model = Pessoa
@@ -113,7 +113,7 @@ class ProdutoUpdate(UpdateView):
         'fornecedores'
     ]
     template_name = 'cadastros/form.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('listar-produtos')
 
 class PedidoUpdate(UpdateView):
     model = Pedido

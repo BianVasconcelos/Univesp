@@ -11,22 +11,27 @@
 </section>
 {% endblock %}
 
+{% block horarios %}
+<section id='horafun' style="background-color: darkgray;">
+  <br><br><br><br>
+  <h2 id='horarios' class="text-center">HORÁRIOS DE FUNCIONAMENTO</h2>
+  <br>
+  <h5 class='text-center'><strong>Segunda-Quinta: </strong>19:00 ás 22:00 horas</h5>
+  <h5 class='text-center'><strong>Sexta-Sábado: </strong>18:00 ás 23:00 horas</h5>
+  <h5 class='text-center'><strong>Domingo: </strong>18:00 ás 22:00 horas</h5>
+  <br><br><br><br>
+</section>
+{% endblock %}
+
 
 {% block conteudo %}
-<section id='horafun' style="background-color: darkgray;">
-    <br><br><br><br><br><br>
-    <h2 id='horarios' class="text-center">HORÁRIOS DE FUNCIONAMENTO</h2>
-    <br>
-    <p class='text-center'><strong>Segunda-Quinta:</strong>19:00 ás 22:00 horas</p>
-    <p class='text-center'><strong>Sexta-Sábado:</strong>18:00 ás 23:00 horas </p>
-    <p class='text-center'><strong>Domingo:</strong>18:00 ás 22:00 horas </p>
-    <br><br><br><br><br><br>
-</section>
+
 <br><br><br>
 <section>
     <h2 id='ncardapio' class="text-center">CARDÁPIO</h2>
     <br><br>
 </section>
+
 <section id="cardba" style="background-color: black;" class="text-center">
   <br><br>
   {% for pizza in pizzas %}
