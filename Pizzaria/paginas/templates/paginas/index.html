@@ -7,9 +7,24 @@
 
 {% block destaque %}
 <section style="background-color: black;">
-  <img src="{% static 'img/logo.jpg' %}" alt="Logo" width="45%" height="45%">
+  <img
+  src="{% static 'img/logo.jpg' %}" 
+  class="figure-img img-fluid roudend"
+  alt="Logo"
+  width="45%"
+  style="background-color: black;" />
 </section>
 {% endblock %}
+
+{% block sobrenos %}
+<section>
+  <figure>
+    <img src="{% static 'img/sobrenos.jpg' %}" alt="sobrenos" width="55%" height="55%">
+  
+  </figure>
+</section>
+{% endblock %}
+
 
 {% block horarios %}
 <section id='horafun' style="background-color: darkgray;">
@@ -23,18 +38,22 @@
 </section>
 {% endblock %}
 
-
-{% block conteudo %}
+{% block cardapio %}
 
 <br><br><br>
 <section>
     <h2 id='ncardapio' class="text-center">CARDÁPIO</h2>
-    <br><br>
+    <br>
 </section>
 
-<section id="cardba" style="background-color: black;" class="text-center">
-  <br><br>
-  {% for pizza in pizzas %}
+{% endblock %}
+
+
+{% block preto %}
+
+<section id="cardba" style="background-color: black;" class="text-center container">
+  <br><br> 
+  {% for pizza in object_list %}
     <figure class="figure" style="background-color: white;">
       <img src="{{ pizza.imagem.url }}" class="figure-img img-fluid rounded" alt="Imagem de um quadrado genérico com bordas arredondadas, em uma figure." style="width: 350px;">
       <figcaption class="figure-caption"><strong>{{ pizza.nome }}</strong></figcaption>
@@ -54,6 +73,11 @@
       </div>
     </figure>
     <br><br>
-  {% endfor %}
+  {% endfor %}  
+
 </section>
+{% endblock %}
+
+{% block conteudo %}
+
 {% endblock %}

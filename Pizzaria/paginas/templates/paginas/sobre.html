@@ -1,4 +1,5 @@
 {% extends 'paginas/modelo.html' %}
+{% load static %}
 
 {% block titulo %}
 <title>Sobre Nós</title>
@@ -6,15 +7,14 @@
 
 {% block destaque %}
 
+<section style="background-color: black;">
+    <img src="{% static 'img/sobrenos.jpg' %}" alt="sobrenos" width="75%">
+
+</section> 
+
 {% endblock %}
 
 {% block conteudo %}
-    <h3>Sobre Nos</h3>
-
-    <p>Esta pagina vai descrever o que e pizzaria</p>
-
-{% endblock %}
-
-{% block footer %}
+         
 
 {% endblock %}

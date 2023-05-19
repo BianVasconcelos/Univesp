@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 #Importa as view que foi criada
 from .views import PessoaCreate, PessoaUpdate, PessoaDelete
@@ -43,3 +45,6 @@ urlpatterns = [
     path('listar/itenspedidos/', ItensPedidoList.as_view(), name='listar-itenspedidos'),
     path('listar/logins/', LoginList.as_view(), name='listar-logins'),          
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
