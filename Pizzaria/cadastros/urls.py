@@ -9,7 +9,7 @@ from .views import ProdutoCreate, ProdutoUpdate, ProdutoDelete
 from .views import PedidoCreate, PedidoUpdate, PedidoDelete
 from .views import LoginCreate, LoginUpdate, LoginDelete
 from .views import ItensPedidoCreate, ItensPedidoUpdate, ItensPedidoDelete
-from .views import PessoaList, PizzaList, ProdutoList, PedidoList, ItensPedidoList, LoginList
+from .views import PessoaList, PizzaList, ProdutoList, PedidoList, ItensPedidoList, LoginList, HomePageList
 
 
 urlpatterns = [
@@ -43,7 +43,9 @@ urlpatterns = [
     path('listar/produtos/', ProdutoList.as_view(), name='listar-produtos'),
     path('listar/pizzas/', PizzaList.as_view(), name='listar-pizzas'),
     path('listar/itenspedidos/', ItensPedidoList.as_view(), name='listar-itenspedidos'),
-    path('listar/logins/', LoginList.as_view(), name='listar-logins'),          
+    path('listar/logins/', LoginList.as_view(), name='listar-logins'),
+    path('listar/listpizza/', HomePageList.as_view(), name='listpizza'),
+    path('home', HomePageList.as_view(), name='home'),            
 ]
 
 if settings.DEBUG:

@@ -11,7 +11,7 @@
   src="{% static 'img/logo.jpg' %}" 
   class="figure-img img-fluid roudend"
   alt="Logo"
-  width="35%"
+  width="38%"
   style="background-color: black;" />
 </section>
 {% endblock %}
@@ -19,11 +19,11 @@
 {% block horarios %}
 <section id='horafun' style="background-color: darkgray;">
   <br><br><br><br>
-  <h2 id='horarios' class="text-center">HORÁRIOS DE FUNCIONAMENTO</h2>
+  <h2 id='horarios' class="text-center fs-2">HORÁRIOS DE FUNCIONAMENTO</h2>
   <br>
-  <h5 class='text-center'><strong>Segunda-Quinta: </strong>19:00 ás 22:00 horas</h5>
-  <h5 class='text-center'><strong>Sexta-Sábado: </strong>18:00 ás 23:00 horas</h5>
-  <h5 class='text-center'><strong>Domingo: </strong>18:00 ás 22:00 horas</h5>
+  <h5 class='text-center fs-5'><strong>Segunda-Quinta: </strong>19:00 ás 22:00 horas</h5>
+  <h5 class='text-center fs-5'><strong>Sexta-Sábado: </strong>18:00 ás 23:00 horas</h5>
+  <h5 class='text-center fs-5'><strong>Domingo: </strong>18:00 ás 22:00 horas</h5>
   <br><br><br><br>
 </section>
 {% endblock %}
@@ -60,7 +60,8 @@
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
           <label class="form-check-label" for="inlineCheckbox3"><strong>G</strong> R${{ pizza.valor_g }}</label>
-        </div>
+        </div>       
+        
       </div>      
     </div>   
     <br>
@@ -74,7 +75,6 @@
     
 </section>
 {% endblock %}
-
 
 {% block conteudo %}
 

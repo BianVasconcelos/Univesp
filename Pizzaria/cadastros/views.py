@@ -199,13 +199,13 @@ class PedidoList(ListView):
     
 class ItensPedidoList(ListView):
     model = ItensPedido
-    template_name = 'cadastos/listas/itenspedido.html'
+    template_name = 'cadastros/listas/itenspedido.html'
     
 class LoginList(ListView):
     model = Login
     template_name = 'cadastros/listas/login.html'
     
-class HomePageView(ListView):
+class HomePageList(ListView):
     model = Pizza
-    template_name = 'index.html'
-    context_object_name = 'pizzas'
+    template_name = 'paginas/pizzalist.html'
+    context_object_name = 'pizza'  
