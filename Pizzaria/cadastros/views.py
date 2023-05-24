@@ -23,7 +23,7 @@ class PessoaCreate(CreateView):
         'estado',
         'cep'
     ]
-    template_name = 'cadastros/form.html'
+    template_name = 'cadastros/formpessoa.html'
     success_url = reverse_lazy('listar-pessoas')
     
 class PizzaCreate(CreateView):
@@ -55,7 +55,7 @@ class PedidoCreate(CreateView):
         'pessoa',
         'login'        
     ]
-    template_name = 'cadastros/form.html'
+    template_name = 'cadastros/formpedido.html'
     success_url = reverse_lazy('listar-pedidos')
 
 class LoginCreate(CreateView):

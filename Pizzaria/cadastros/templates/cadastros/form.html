@@ -1,5 +1,7 @@
-{% extends 'paginas/modelo.html' %}
+{% extends 'cadastros/model.html' %}
 {% load static %}
+
+{% load crispy_forms_tags %}
 
 {% block titulo %}
 <title>Cadastro</title>
@@ -10,6 +12,7 @@
 {% endblock %}
 
 {% block conteudo %}
+<br>
 <h3>Cadastro</h3>
 
 <p class="lead">Preencha todos os campos obrigatorios</p>
@@ -18,7 +21,7 @@
 <form method="post">{% csrf_token %}
     
 
-    {{ form.as_p }}
+    {{ form|crispy }}
 
     <button type="submit" class="btn btn-primary">Cadastrar</button>
 
