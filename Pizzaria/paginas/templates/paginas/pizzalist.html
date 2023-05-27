@@ -45,7 +45,7 @@
     {% for pizza in object_list %}
   <div class="col-sm-4">
     <div class="card">
-      <img src="{{ pizza.imagem.url }}" class="card-img-top" alt="...">
+      <img src="{{ pizza.imagem.url }}" class="card-img-top" alt="Imagens de Pizzas">
       <div class="card-body">
         <h5 class="card-title text-center fs-4"><strong>{{ pizza.nome }}</strong></h5>
         <p class="card-text text-center fs-6">{{ pizza.descricao }}</p>
@@ -53,13 +53,16 @@
           <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
           <label class="form-check-label" for="inlineCheckbox1"><strong>P</strong> R${{ pizza.valor_p }}</label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline text-center">
           <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
           <label class="form-check-label" for="inlineCheckbox2"><strong>M</strong> R${{ pizza.valor_m }}</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
           <label class="form-check-label" for="inlineCheckbox3"><strong>G</strong> R${{ pizza.valor_g }}</label>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-warning fs-6"><strong>Fazer Pedido</strong></button>
         </div>       
         
       </div>      
